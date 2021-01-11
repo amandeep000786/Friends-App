@@ -1,0 +1,55 @@
+li {
+    list-style-type: none;
+    margin: 2px 2px;
+    padding: 2px 5px;
+    background: rgb(66,66,66,1);
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,1), 0 1px 1px 0 rgba(0,0,0,1), 0 1px 3px 0 rgba(0,0,0,1);
+    color: white;
+    margin-right: 35px;
+    margin-bottom: 10px;
+  }
+  
+  .him {
+    float: left;
+    border-radius: 0 10px 10px 0;
+    clear: both;
+  }
+  .me {
+    float: right;
+    border-radius: 10px 0 0 10px;
+    clear: both;
+  }
+  .him.start {
+    border-top-left-radius: 10px;  
+  }
+  .him.end {
+    border-bottom-left-radius: 10px;  
+  }
+  .me.start {
+    border-top-right-radius: 10px;  
+  }
+  .me.end {
+    border-bottom-right-radius: 10px;  
+  }
+
+  .message-text {
+    position:fixed;
+    bottom:0px;
+   }
+
+   .message-input {
+    overflow: auto;
+    width: 139vh !important;
+    height: 36px;
+}
+button{
+    height:42px;
+    width:22vh;
+    float: right;
+}
+
+.timestamp{
+    font-size:8px;
+    float: right;
+}
+

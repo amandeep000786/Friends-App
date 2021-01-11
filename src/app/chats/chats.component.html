@@ -1,0 +1,16 @@
+
+<section *ngFor="let chat of chatJsonArr"  matRipple [matRippleTrigger]="trigger">
+    <a [routerLink]="['/chatscreen',chat.chatid]">
+    <mat-card  >
+   
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image':'url(../../assets/'+chat.avatar+')'}"></div>
+      <mat-card-title>{{chat.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-subtitle style="float: right;">{{getLastTimeStamp(chat.chatid)|date:' hh:mm'}}</mat-card-subtitle>
+      <mat-card-subtitle *ngIf="getLastMessage(chat.chatid).length>20">{{getLastMessage(chat.chatid) | slice:0:20}}.. </mat-card-subtitle>
+      <mat-card-subtitle *ngIf="getLastMessage(chat.chatid).length<=20">{{getLastMessage(chat.chatid)}} </mat-card-subtitle>
+
+  </mat-card>
+</a>
+</section>

@@ -1,0 +1,31 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+  }
+  
+  .navbar-fixed {
+    width:300px;
+  }
+
+  .mat-card{
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,1), 
+    0 1px 1px 0 rgba(0,0,0,1), 
+    0 1px 3px 0 rgba(0,0,0,1);
+  }
+
+  .example-header-image{
+    /* background-image: url('../../assets/chandler.jpg'); */
+    background-size: cover;
+  }
+
+  a{
+      text-decoration: none;
+  }
+
+  .mat-card-subtitle{
+    margin-left: 35px;
+  }

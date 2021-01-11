@@ -1,0 +1,30 @@
+[
+    {
+      "chatid":1,
+      "name":"Chandler",
+      "avatar":"chandler.jpg",
+      "chatarr":[
+        {"id": 1, "message": "Hi","timestamp":1610343249804,"isReceiver":false},
+        {"id": 2, "message": "How are You ?","timestamp":1610343249905,"isReceiver":false},
+        {"id": 3, "message": "when to meet?","timestamp":1610343249555,"isReceiver":false},
+        {"id": 4, "message": "I willl be ready","timestamp":1610343307942,"isReceiver":false},
+        {"id": 5, "message": "Hi","timestamp":1610343307942,"isReceiver":true},
+        {"id": 6, "message": "m fine","timestamp":1610343307942,"isReceiver":true},
+        {"id": 7, "message": "will see you at 6","timestamp":1610343343798,"isReceiver":true}
+      ]
+    },
+    {
+      "chatid":2,
+      "name":"Joey",
+      "avatar": "joey.jpg",
+      "chatarr":[
+        {"id": 1, "message": "How you Doin ?","timestamp":1610343249804,"isReceiver":false},
+        {"id": 2, "message": ":P","timestamp":1610343249905,"isReceiver":false},
+        {"id": 3, "message": "Joey..","timestamp":1610343249555,"isReceiver":true},
+        {"id": 4, "message": "let's go for coffee","timestamp":1610343307942,"isReceiver":true},
+        {"id": 5, "message": "Where?","timestamp":1610343307942,"isReceiver":false},
+        {"id": 6, "message": ":D","timestamp":1610343307942,"isReceiver":true},
+        {"id": 7, "message": "See you at Central Perk in 2 mins.","timestamp":1610343343798,"isReceiver":false}]
+    }
+ 
+]
