@@ -5,9 +5,8 @@
     </mat-toolbar>
    <app-chats></app-chats>
   </mat-sidenav>
-  <mat-sidenav-content>
-    
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
+  <div #chatcontainer class="content" #main>
+<router-outlet></router-outlet>
+  </div>
 </mat-sidenav-container>
 

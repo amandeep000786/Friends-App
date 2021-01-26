@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import {ActivatedRoute, Router, RouterModule} from '@angular/router';
 import { MessageServiceService } from '../message-service.service';
 import * as data from '../json/messagesjson.json';

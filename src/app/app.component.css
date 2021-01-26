@@ -32,4 +32,15 @@
   .gohome:hover{
     cursor: pointer;
   }
+
+  .content {
+    position: absolute;
+     width: 98%;
+     margin: 0px;
+     /* bottom: -50px; */
+     height: 90%;
+     max-height: 90%;
+     overflow: auto;
+  
+  }
  

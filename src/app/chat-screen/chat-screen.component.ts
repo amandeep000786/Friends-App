@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, ElementRef, OnChanges, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MessageServiceService } from '../message-service.service';
@@ -9,13 +9,15 @@ import * as data from '../json/messagesjson.json';
   styleUrls: ['./chat-screen.component.css']
 })
 export class ChatScreenComponent implements OnInit {
-  // {id: number, message: string,timestamp:number,isReceiver:boolean}
-  chatJsonArr: Array<any> = (data as any).default;
-
+  @ViewChild('scrollframe', {static: false}) scrollFrame: ElementRef;
+  @ViewChildren('chatJsonArr') itemElements: QueryList<any>;
+  chatJsonArr: QueryList<any> = (data as any).default;
+  
   subscription: Subscription;
   messageval:string;
   now:number;
   chatid:string;
+  private scrollContainer: any;
   constructor(private messageService:MessageServiceService,private route:ActivatedRoute) { 
 
     this.route.params.subscribe(routeParam => {
@@ -23,7 +25,23 @@ export class ChatScreenComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit() {
+    this.scrollContainer = this.scrollFrame.nativeElement;
+    this.itemElements.changes.subscribe(_ => this.onItemElementsChanged());    
+
+    // Add a new item every 2 seconds for demo purposes
+ 
+  }
+
+  private onItemElementsChanged(): void {
+    this.scrollContainer.scroll({
+      top: this.scrollContainer.scrollHeight,
+      left: 0,
+      behavior: 'smooth'
+    });
   
+  }
+
   ngOnInit(): void {
    
     this.subscription = this.messageService.getMessage().subscribe(message => {
@@ -34,7 +52,6 @@ export class ChatScreenComponent implements OnInit {
             this.now = new Date().getTime();  
             element.chatarr.push({id:lastid+1,message:message,timestamp:this.now,isReceiver:true});
             this.messageval="";
-           
           }
         });
       } 

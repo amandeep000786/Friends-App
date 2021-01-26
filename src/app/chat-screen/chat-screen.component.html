@@ -1,23 +1,26 @@
-<mat-toolbar>
-    
-</mat-toolbar>
-<ul>
-    <section *ngFor="let chat of chatJsonArr"> 
-        <section *ngIf="chat.chatid == chatid">
-            <section *ngFor="let messagedata of chat.chatarr">
-                <li class="him start" *ngIf="!messagedata.isReceiver" >{{messagedata.message}}<br>
-                    <span class="timestamp">{{messagedata.timestamp|date:'MMM d, h:mm a'}}</span>
-                </li>
-                <li class="me end" *ngIf="messagedata.isReceiver">{{messagedata.message}}<br>
-                    <span class="timestamp">{{messagedata.timestamp|date:'MMM d, h:mm a'}}</span>
-                </li>
+<div class="container" #scrollframe>
+    <ul>
+        <section *ngFor="let chat of chatJsonArr"> 
+            <section *ngIf="chat.chatid == chatid">
+                <section *ngFor="let messagedata of chat.chatarr">
+                    <li class="him start" *ngIf="!messagedata.isReceiver" >{{messagedata.message}}<br>
+                        <span class="timestamp">{{messagedata.timestamp|date:'MMM d, h:mm a'}}</span>
+                    </li>
+                    <li class="me end" *ngIf="messagedata.isReceiver">{{messagedata.message}}<br>
+                        <span class="timestamp">{{messagedata.timestamp|date:'MMM d, h:mm a'}}</span>
+                    </li>
+                </section>
             </section>
         </section>
-    </section>
-</ul>
-   <div class="message-text">
+    </ul>
+</div>
+   <div class="footer">
     <input #message id="message" class= "message-input" type="text" (keyup.enter)= sendMessage()  [(ngModel)]="messageval" placeholder="Start typing to share a message">
     <button mat-raised-button (click)="sendMessage()">Send</button>
-    
-  </div>
 
+  </div>
+  <!-- <div class="footer" #footer>
+    Your sticky footer with a variable height.
+  </div> -->
+
+  
