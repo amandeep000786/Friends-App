@@ -1,14 +1,12 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav class="navbar-fixed" mode="side" opened>
     <mat-toolbar>
-      <span>F.R.I.E.N.D.S App</span>
+      <a class= "gohome" (click)="reload()" matRipple [matRippleTrigger]="trigger">F.R.I.E.N.D.S App</a>
     </mat-toolbar>
    <app-chats></app-chats>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar>
-     
-    </mat-toolbar>
+    
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

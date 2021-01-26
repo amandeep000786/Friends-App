@@ -8,7 +8,7 @@ import * as data from '../json/messagesjson.json';
   templateUrl: './chat-screen.component.html',
   styleUrls: ['./chat-screen.component.css']
 })
-export class ChatScreenComponent implements OnInit,OnChanges {
+export class ChatScreenComponent implements OnInit {
   // {id: number, message: string,timestamp:number,isReceiver:boolean}
   chatJsonArr: Array<any> = (data as any).default;
 
@@ -18,17 +18,16 @@ export class ChatScreenComponent implements OnInit,OnChanges {
   chatid:string;
   constructor(private messageService:MessageServiceService,private route:ActivatedRoute) { 
 
-   
+    this.route.params.subscribe(routeParam => {
+      this.chatid=routeParam.id
+    });
   }
 
   
   ngOnInit(): void {
-    this.route.params.subscribe(routeParam => {
-      this.chatid=routeParam.id
-    });
+   
     this.subscription = this.messageService.getMessage().subscribe(message => {
       if (message) {
-        console.log("here");
         this.chatJsonArr.forEach(element => {
           if(element.chatid==this.chatid){
             let lastid=element.chatarr[element.chatarr.length-1].id;
@@ -41,14 +40,8 @@ export class ChatScreenComponent implements OnInit,OnChanges {
       } 
     });
   }
-
-  ngOnChanges(){
-   
-
-      console.log(this.chatid);
-
   
-  }
+ 
   
   sendMessage(){
       this.messageService.sendMessage(this.messageval);
